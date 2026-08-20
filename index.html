@@ -325,13 +325,13 @@ footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 28px;m
     <!-- <video class="hero-video" autoplay muted loop playsinline poster="img/korpus-leto.webp">
            <source src="video/hero.mp4" type="video/mp4"></video> -->
     <div class="slides" aria-hidden="true">
-      <img class="on zoom" src="img/aero-territoriya.webp" alt="">
-      <img src="img/deti-pole.webp" alt="">
-      <img src="img/besedka-vecher.webp" alt="">
-      <img src="img/korpus-leto.webp" alt="">
-      <img src="img/ploshadka.webp" alt="">
-      <img src="img/panorama-reka.webp" alt="">
-      <img src="img/korpus-zima.webp" alt="">
+      <img class="on zoom" src="img/aero-territoriya.webp" alt="" fetchpriority="high" decoding="async">
+      <img data-src="img/deti-pole.webp" alt="" decoding="async">
+      <img data-src="img/besedka-vecher.webp" alt="" decoding="async">
+      <img data-src="img/korpus-leto.webp" alt="" decoding="async">
+      <img data-src="img/ploshadka.webp" alt="" decoding="async">
+      <img data-src="img/panorama-reka.webp" alt="" decoding="async">
+      <img data-src="img/korpus-zima.webp" alt="" decoding="async">
     </div>
 
     <div class="tab tab-tl">
@@ -443,32 +443,32 @@ footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 28px;m
       </div>
       <div class="tiles">
         <article class="tile">
-          <img src="img/korpus-leto.webp" alt="Главный корпус">
+          <img src="img/korpus-leto.webp" alt="Главный корпус" loading="lazy" decoding="async">
           <div class="t"><div><h3>Проживание</h3><small>Корпус 468,6 м² + два дома · 79 мест</small></div><button class="add" data-add="lodging" aria-pressed="false" aria-label="Добавить проживание в расчёт">+</button></div>
           <div class="pr"><b class="num">1 600 ₽</b><span>место в сутки</span></div>
         </article>
         <article class="tile">
-          <img src="img/stolovaya.webp" alt="Столовая">
+          <img src="img/stolovaya.webp" alt="Столовая" loading="lazy" decoding="async">
           <div class="t"><div><h3>Питание</h3><small>Столовая 461,5 м² · команда в один заход</small></div><button class="add" data-add="meals" aria-pressed="false" aria-label="Добавить питание в расчёт">+</button></div>
           <div class="pr"><b class="num">1 400 ₽</b><span>полный пансион в сутки</span></div>
         </article>
         <article class="tile">
-          <img src="img/bankett-zal.webp" alt="Зал на 60 человек">
+          <img src="img/bankett-zal.webp" alt="Зал на 60 человек" loading="lazy" decoding="async">
           <div class="t"><div><h3>Зал на 60</h3><small>Второй уровень столовой · сессии и банкеты</small></div><button class="add" data-add="hall" aria-pressed="false" aria-label="Добавить зал в расчёт">+</button></div>
           <div class="pr"><b class="num">20 000 ₽</b><span>6 часов + 5 000 уборка</span></div>
         </article>
         <article class="tile">
-          <img src="img/ploshadka.webp" alt="Спортивная площадка">
+          <img src="img/ploshadka.webp" alt="Спортивная площадка" loading="lazy" decoding="async">
           <div class="t"><div><h3>Спорт</h3><small>Зал 303,7 м² и площадка с покрытием</small></div><button class="add" data-add="sport" aria-pressed="false" aria-label="Добавить спорт в расчёт">+</button></div>
           <div class="pr"><b class="num">200 ₽</b><span>чел/день · площадка 500 ₽/час</span></div>
         </article>
         <article class="tile">
-          <img src="img/banya-snaruzhi.webp" alt="Баня">
+          <img src="img/banya-snaruzhi.webp" alt="Баня" loading="lazy" decoding="async">
           <div class="t"><div><h3>Баня</h3><small>29 м² · парная, моечная, комната отдыха</small></div><button class="add" data-add="banya" aria-pressed="false" aria-label="Добавить баню в расчёт">+</button></div>
           <div class="pr"><b class="num">1 500 ₽</b><span class="ok">4 часа, пятый в подарок</span></div>
         </article>
         <article class="tile">
-          <img src="img/dom-1.webp" alt="Дом на 16 мест">
+          <img src="img/dom-1.webp" alt="Дом на 16 мест" loading="lazy" decoding="async">
           <div class="t"><div><h3>Дом целиком</h3><small>172,8 м² · 16 мест · два этажа</small></div><button class="add" data-add="house" aria-pressed="false" aria-label="Добавить дом в расчёт">+</button></div>
           <div class="pr"><b class="num">10 000 ₽</b><span>будни · вых. 15 000 · празд. 30 000</span></div>
         </article>
@@ -486,7 +486,7 @@ footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 28px;m
           <a class="btn" href="#raschet" data-preset="sbor">Рассчитать сбор <i>→</i></a>
         </div>
         <div class="photo">
-          <img src="img/besedka.webp" alt="Беседка на территории">
+          <img src="img/besedka.webp" alt="Беседка на территории" loading="lazy" decoding="async">
           <div class="cap"><b>Выходные и праздники</b><span>Дом целиком, баня на вечер, зал на 60 под торжество. Гости остаются ночевать. <a href="#raschet" data-preset="prazd" style="color:var(--orange);font-weight:600">Рассчитать →</a></span></div>
         </div>
       </div>
@@ -893,10 +893,30 @@ footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 28px;m
 
   /* ---------- слайдшоу героя ---------- */
   var slides = document.querySelectorAll('.slides img');
+
+  // подтягиваем остальные кадры уже после первой отрисовки, по одному
+  function warmUp(){
+    var queue = [].slice.call(document.querySelectorAll('.slides img[data-src]'));
+    (function next(){
+      var el = queue.shift();
+      if (!el) return;
+      el.onload = el.onerror = function(){ setTimeout(next, 250); };
+      el.src = el.dataset.src;
+      el.removeAttribute('data-src');
+    })();
+  }
+  if (document.readyState === 'complete') setTimeout(warmUp, 400);
+  else window.addEventListener('load', function(){ setTimeout(warmUp, 400); });
+
   if (slides.length > 1 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
     var cur = 0;
     setInterval(function(){
       var nxt = (cur + 1) % slides.length;
+      var guard = 0;
+      while (!slides[nxt].getAttribute('src') && guard++ < slides.length) {
+        nxt = (nxt + 1) % slides.length;          // пропускаем ещё не загруженные
+      }
+      if (nxt === cur) return;
       var prev = slides[cur];
       slides[nxt].classList.remove('zoom');
       void slides[nxt].offsetWidth;
