@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Многофункциональный комплекс «Жемчужина», с. Мичурино Тюменского района: сборы, корпоративы, банкеты и загородный отдых.">
+<title>Жемчужина — загородный комплекс в Мичурино</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1B1E34;
+  --ink-2:#5C6078;
+  --ink-3:#9599AE;
+  --glass:rgba(255,255,255,.86);
+  --paper:#F4F5F9;
+  --line:rgba(27,30,52,.10);
+  --orange:#F4600A;
+  --blue:#2B4CA8;
+  --cyan:#29A0DC;
+  --r:34px;
+  --disp:'Oswald',Impact,sans-serif;
+  --body:'Poppins','Segoe UI',system-ui,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+img{max-width:100%;display:block}
+h1,h2,h3,p{margin:0}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--orange);outline-offset:3px}
+.num{font-variant-numeric:tabular-nums}
+
+/* ============ СЦЕНА ============ */
+.stage{position:relative;min-height:100svh;padding:18px;background:var(--paper)}
+.stage .bg{position:absolute;inset:0;background:var(--paper)}
+.card{position:relative;z-index:2;min-height:calc(100svh - 36px);border-radius:var(--r);overflow:hidden;background:#1B1E34;box-shadow:0 40px 90px -40px rgba(27,30,52,.55)}
+.card>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(.92)}
+.card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(27,30,52,.55) 0%,rgba(27,30,52,.18) 32%,rgba(27,30,52,.22) 62%,rgba(27,30,52,.78) 100%);pointer-events:none}
+
+.tab{position:absolute;z-index:4;background:var(--paper);display:flex;align-items:center;gap:10px}
+.tab-tl{left:0;top:0;padding:16px 30px 14px 26px;border-radius:0 0 var(--r) 0}
+.tab-tr{right:0;top:0;padding:16px 26px 14px 30px;border-radius:0 0 0 var(--r)}
+.tab-tl::before,.tab-tl::after,.tab-tr::before,.tab-tr::after{content:"";position:absolute;width:var(--r);height:var(--r);background:transparent;pointer-events:none}
+.tab-tl::after{left:100%;top:0;background:radial-gradient(circle at 100% 100%,transparent var(--r),var(--paper) calc(var(--r) + 1px))}
+.tab-tl::before{left:0;top:100%;background:radial-gradient(circle at 100% 100%,transparent var(--r),var(--paper) calc(var(--r) + 1px))}
+.tab-tr::after{right:100%;top:0;background:radial-gradient(circle at 0 100%,transparent var(--r),var(--paper) calc(var(--r) + 1px))}
+.tab-tr::before{right:0;top:100%;background:radial-gradient(circle at 0 100%,transparent var(--r),var(--paper) calc(var(--r) + 1px))}
+.tab .lg{display:flex;align-items:center;gap:10px;color:var(--ink)}
+.tab .lg svg{width:26px;height:26px;color:var(--orange)}
+.tab .lg b{font-family:var(--disp);font-weight:500;font-size:15px;letter-spacing:.24em;text-transform:uppercase}
+.tab .lnk{font-size:13px;font-weight:500;color:var(--ink);display:flex;align-items:center;gap:8px}
+.tab .lnk i{color:var(--orange);font-style:normal}
+
+/* капсула-конфигуратор в шапке */
+.pill{position:absolute;z-index:5;left:50%;top:18px;transform:translateX(-50%);display:flex;align-items:center;background:var(--glass);backdrop-filter:blur(14px);border-radius:999px;padding:8px 8px 8px 10px;box-shadow:0 18px 40px -22px rgba(0,0,0,.5);max-width:calc(100% - 420px)}
+.pill .f{padding:6px 20px;border-right:1px solid var(--line);min-width:150px}
+.pill .f:last-of-type{border-right:0}
+.pill .f small{display:block;font-size:10px;color:var(--ink-3);margin-bottom:1px}
+.pill select,.pill input{border:0;background:transparent;font:inherit;font-weight:500;font-size:13px;color:var(--ink);width:100%;appearance:none;-webkit-appearance:none;padding:0;cursor:pointer}
+.pill input{cursor:text}
+.pill select:focus,.pill input:focus{outline:none}
+.pill .f{position:relative}
+.pill .f[data-arrow]::after{content:"⌄";position:absolute;right:14px;bottom:8px;color:var(--ink-3);font-size:11px;pointer-events:none}
+.pill .go{width:42px;height:42px;border-radius:50%;background:var(--orange);color:#fff;border:0;display:flex;align-items:center;justify-content:center;flex:none;margin-left:6px;font-size:17px;transition:.15s}
+.pill .go:hover{filter:brightness(1.1)}
+
+.rail{position:absolute;z-index:5;left:22px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:10px}
+.rail .grp{background:var(--glass);backdrop-filter:blur(14px);border-radius:999px;padding:8px;display:flex;flex-direction:column;gap:6px;box-shadow:0 14px 30px -18px rgba(0,0,0,.5)}
+.rail a{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--ink-2);font-size:16px;transition:.15s}
+.rail a:hover{background:#fff;color:var(--ink)}
+.rail a.on{background:var(--ink);color:#fff}
+.rail a svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+
+.head{position:absolute;z-index:3;left:0;right:0;top:16%;text-align:center;padding:0 90px}
+.head h1{font-family:var(--disp);font-weight:400;text-transform:uppercase;letter-spacing:.04em;font-size:clamp(40px,8.6vw,118px);line-height:.96;color:#fff;text-shadow:0 8px 40px rgba(0,0,0,.35)}
+.head h1 em{font-style:normal;position:relative}
+.head h1 em::after{content:"";position:absolute;left:0;right:0;bottom:.06em;height:.08em;background:var(--orange);border-radius:2px}
+.head p{max-width:48ch;margin:18px auto 0;color:rgba(255,255,255,.85);font-size:13.5px;line-height:1.6;text-shadow:0 2px 14px rgba(0,0,0,.4)}
+.head .badge{display:inline-flex;align-items:center;gap:8px;margin-bottom:16px;padding:6px 14px 6px 8px;border-radius:999px;background:rgba(255,255,255,.14);backdrop-filter:blur(10px);color:#fff;font-size:11.5px;font-weight:500}
+.head .badge i{width:20px;height:20px;border-radius:50%;background:var(--orange);display:inline-flex;align-items:center;justify-content:center;font-style:normal;font-size:10px}
+
+.float-l{position:absolute;z-index:5;left:90px;bottom:34px;width:min(340px,40vw);background:var(--glass);backdrop-filter:blur(14px);border-radius:26px;padding:22px 24px;box-shadow:0 24px 60px -30px rgba(0,0,0,.6)}
+.float-l h3{font-weight:600;font-size:16px;margin-bottom:8px}
+.float-l p{font-size:12px;color:var(--ink-2);line-height:1.55}
+.float-l .row{display:flex;align-items:center;gap:16px;margin-top:16px}
+.float-l .big{font-family:var(--disp);font-weight:500;font-size:44px;line-height:1;color:var(--ink)}
+.float-l .big small{display:block;font-family:var(--body);font-size:10.5px;color:var(--ink-3);margin-top:2px;font-weight:500}
+.float-l .faces{display:flex;margin-left:auto}
+.float-l .faces i{width:36px;height:36px;border-radius:50%;border:2px solid #fff;margin-left:-12px;background-size:cover;background-position:center;display:block}
+.float-l .faces i:first-child{margin-left:0}
+.float-l .go{width:40px;height:40px;border-radius:50%;background:var(--ink);color:#fff;display:flex;align-items:center;justify-content:center;flex:none;font-size:15px}
+
+.float-r{position:absolute;z-index:5;right:90px;bottom:34px;width:min(330px,40vw);background:var(--glass);backdrop-filter:blur(14px);border-radius:26px;padding:22px 24px;box-shadow:0 24px 60px -30px rgba(0,0,0,.6)}
+.float-r h3{font-weight:600;font-size:15.5px;display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.float-r h3 .go{width:38px;height:38px;border-radius:50%;background:#fff;border:1px solid var(--line);color:var(--ink);display:flex;align-items:center;justify-content:center;flex:none;font-size:14px;box-shadow:0 6px 16px -8px rgba(0,0,0,.3)}
+.float-r .addr{font-size:11px;color:var(--ink-3);display:flex;align-items:center;gap:6px;margin:4px 0 10px}
+.float-r p{font-size:11.5px;color:var(--ink-2);line-height:1.55}
+.float-r .specs{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:12px;font-size:11px;color:var(--ink-2)}
+.float-r .specs b{color:var(--ink);font-weight:600}
+
+.orb{position:absolute;z-index:6;left:50%;bottom:34px;transform:translateX(-50%);display:flex;align-items:center;gap:14px}
+.orb .mark{width:68px;height:68px;border-radius:50%;background:var(--blue);display:flex;align-items:center;justify-content:center;box-shadow:0 18px 40px -16px rgba(43,76,168,.8);transition:.18s}
+.orb .mark:hover{transform:translateY(-2px);background:var(--orange);box-shadow:0 18px 40px -16px rgba(244,96,10,.8)}
+.orb .mark svg{width:34px;height:34px;color:#fff}
+.orb .soc{background:var(--glass);backdrop-filter:blur(14px);border-radius:999px;padding:8px 12px;display:flex;gap:14px;box-shadow:0 14px 30px -18px rgba(0,0,0,.5)}
+.orb .soc a{display:flex;flex-direction:column;align-items:center;gap:2px;font-size:9.5px;color:var(--ink-2);min-width:34px}
+.orb .soc a svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+
+/* ============ КОНТЕНТ ============ */
+.page{background:var(--paper);color:var(--ink);padding:48px 18px 80px}
+.wrap{max-width:1180px;margin:0 auto}
+.sec{margin-bottom:56px}
+.sec-h{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:10px 24px;margin-bottom:22px}
+.sec-h h2{font-weight:600;font-size:clamp(20px,2.6vw,26px);letter-spacing:-.01em}
+.sec-h p{font-size:13px;color:var(--ink-2);max-width:60ch}
+.sec-h a{font-size:13px;font-weight:500;display:inline-flex;align-items:center;gap:6px}
+.sec-h a i{color:var(--orange);font-style:normal}
+
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+.tile{background:#fff;border-radius:24px;padding:14px;box-shadow:0 18px 40px -30px rgba(27,30,52,.4);display:flex;flex-direction:column;gap:12px;transition:.18s}
+.tile:hover{transform:translateY(-3px);box-shadow:0 26px 50px -28px rgba(27,30,52,.5)}
+.tile img{border-radius:16px;aspect-ratio:4/3;object-fit:cover;width:100%}
+.tile .t{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;padding:0 6px}
+.tile h3{font-size:14.5px;font-weight:600}
+.tile .t small{display:block;font-size:11px;color:var(--ink-3);margin-top:2px}
+.tile .add{width:34px;height:34px;border-radius:50%;border:1px solid var(--line);background:#fff;display:flex;align-items:center;justify-content:center;color:var(--ink-2);flex:none;font-size:17px;line-height:1;transition:.15s}
+.tile .add[aria-pressed="true"]{background:var(--orange);border-color:var(--orange);color:#fff}
+.tile .pr{display:flex;justify-content:space-between;align-items:baseline;gap:8px;padding:10px 6px 6px;border-top:1px solid var(--line)}
+.tile .pr b{font-family:var(--disp);font-weight:500;font-size:22px}
+.tile .pr span{font-size:11px;color:var(--ink-3);text-align:right}
+.tile .pr .ok{font-size:10px;color:var(--orange);font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+
+.split{display:grid;grid-template-columns:1fr;gap:18px}
+@media(min-width:900px){.split{grid-template-columns:1.1fr .9fr}}
+.darkb{background:var(--ink);color:#fff;border-radius:28px;padding:34px 36px;display:flex;flex-direction:column;justify-content:space-between;gap:26px;min-height:300px;position:relative;overflow:hidden}
+.darkb::after{content:"";position:absolute;right:-60px;top:-60px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(244,96,10,.35),transparent 70%)}
+.darkb h2{font-weight:600;font-size:clamp(22px,3vw,30px);line-height:1.2;max-width:18ch;position:relative}
+.darkb p{font-size:13px;color:rgba(255,255,255,.72);max-width:44ch;position:relative}
+.darkb .btn{align-self:flex-start;background:#fff;color:var(--ink);border-radius:999px;padding:12px 22px;font-size:13px;font-weight:600;display:inline-flex;align-items:center;gap:10px;position:relative}
+.darkb .btn i{color:var(--orange);font-style:normal}
+.photo{border-radius:28px;overflow:hidden;min-height:300px;position:relative}
+.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.photo .cap{position:absolute;left:18px;bottom:18px;right:18px;background:var(--glass);backdrop-filter:blur(12px);border-radius:18px;padding:14px 16px}
+.photo .cap b{font-size:14px;font-weight:600;display:block}
+.photo .cap span{font-size:11.5px;color:var(--ink-2)}
+
+/* ============ КОНСТРУКТОР ============ */
+.builder{display:grid;grid-template-columns:1fr;gap:18px;align-items:start}
+@media(min-width:980px){.builder{grid-template-columns:1fr 360px}}
+.opts{display:flex;flex-direction:column;gap:14px}
+.panel{background:#fff;border-radius:24px;padding:20px 22px;box-shadow:0 18px 40px -30px rgba(27,30,52,.4)}
+.panel .cap{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);margin-bottom:12px}
+.fmt{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px}
+.fmt button{border:1px solid var(--line);background:#fff;border-radius:16px;padding:12px 10px;text-align:left;transition:.15s}
+.fmt button b{display:block;font-size:13px;font-weight:600}
+.fmt button span{font-size:10.5px;color:var(--ink-3)}
+.fmt button[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
+.fmt button[aria-pressed="true"] span{color:rgba(255,255,255,.6)}
+.duo-ctl{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:560px){.duo-ctl{grid-template-columns:1fr}}
+.stepper{display:flex;align-items:center;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:#fff}
+.stepper button{width:44px;height:46px;border:0;background:transparent;font-size:19px;color:var(--ink)}
+.stepper button:hover{background:var(--paper)}
+.stepper output{flex:1;text-align:center;font-family:var(--disp);font-weight:500;font-size:19px}
+.stepper output small{display:block;font-family:var(--body);font-size:9.5px;color:var(--ink-3);font-weight:500;letter-spacing:.04em;text-transform:uppercase;line-height:1.1}
+.optlist{display:grid;grid-template-columns:1fr;gap:10px}
+.opt{border:1px solid var(--line);border-radius:18px;padding:14px 16px;display:grid;grid-template-columns:auto 1fr auto;gap:4px 14px;align-items:center;background:#fff;transition:.15s}
+.opt.on{border-color:var(--ink);box-shadow:0 10px 24px -18px rgba(27,30,52,.5)}
+.opt .sw{grid-row:span 2;width:46px;height:28px;border-radius:999px;border:1px solid var(--line);background:var(--paper);position:relative;padding:0;transition:.15s}
+.opt .sw::after{content:"";position:absolute;left:3px;top:3px;width:20px;height:20px;border-radius:50%;background:#fff;box-shadow:0 2px 6px rgba(0,0,0,.25);transition:.15s}
+.opt .sw[aria-checked="true"]{background:var(--orange);border-color:var(--orange)}
+.opt .sw[aria-checked="true"]::after{left:21px}
+.opt b{font-size:13.5px;font-weight:600}
+.opt .hint{grid-column:2/3;font-size:11px;color:var(--ink-3);line-height:1.45}
+.opt .prc{grid-row:span 2;font-family:var(--disp);font-weight:500;font-size:16px;white-space:nowrap;text-align:right;color:var(--ink)}
+.opt .prc small{display:block;font-family:var(--body);font-size:9.5px;color:var(--ink-3);font-weight:500}
+.opt .sub-ctl{grid-column:1/-1;display:none;align-items:center;gap:10px;border-top:1px dashed var(--line);padding-top:12px;margin-top:6px;flex-wrap:wrap}
+.opt.on .sub-ctl{display:flex}
+.mini{display:inline-flex;align-items:center;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.mini button{width:34px;height:34px;border:0;background:transparent;font-size:15px}
+.mini output{min-width:70px;text-align:center;font-family:var(--disp);font-size:14px}
+.mini-lbl{font-size:11px;color:var(--ink-2)}
+.seg3{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden}
+.seg3 button{border:0;background:transparent;padding:8px 14px;font-size:11.5px;font-weight:500;color:var(--ink-2)}
+.seg3 button[aria-pressed="true"]{background:var(--ink);color:#fff}
+
+/* смета */
+.quote{position:sticky;top:18px;background:var(--ink);color:#fff;border-radius:26px;padding:22px 24px;box-shadow:0 30px 70px -35px rgba(27,30,52,.8)}
+.quote h3{font-weight:600;font-size:16px;display:flex;justify-content:space-between;align-items:center;gap:10px}
+.quote h3 span{font-size:10px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.5)}
+.qlines{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:8px;max-height:300px;overflow:auto}
+.qlines li{display:flex;justify-content:space-between;gap:12px;font-size:12.5px;border-bottom:1px dashed rgba(255,255,255,.14);padding-bottom:8px}
+.qlines li span{color:rgba(255,255,255,.75)}
+.qlines li small{display:block;font-size:10.5px;color:rgba(255,255,255,.45)}
+.qlines li b{font-family:var(--disp);font-weight:400;font-size:14px;white-space:nowrap}
+.qlines li.disc b,.qlines li.disc span{color:#FFB27A}
+.qlines li.note{border-bottom:0;font-size:11px;color:rgba(255,255,255,.55);display:block}
+.qtotal{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-top:14px;padding-top:12px;border-top:1px solid rgba(255,255,255,.2)}
+.qtotal span{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.55)}
+.qtotal b{font-family:var(--disp);font-weight:500;font-size:34px;color:#FF8A3D}
+.qpp{font-size:11.5px;color:rgba(255,255,255,.55);margin-top:2px;text-align:right}
+.qbtns{display:grid;gap:8px;margin-top:16px}
+.qbtns .main{background:var(--orange);color:#fff;border:0;border-radius:999px;padding:13px 20px;font-weight:600;font-size:13.5px;text-align:center;transition:.15s}
+.qbtns .main:hover{filter:brightness(1.1)}
+.qbtns .row2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.qbtns .ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:10px 12px;font-size:12px;font-weight:500}
+.qbtns .ghost:hover{background:rgba(255,255,255,.08)}
+.qnote{font-size:10.5px;color:rgba(255,255,255,.45);margin-top:12px;line-height:1.5}
+
+/* цифры */
+.strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px}
+.strip>div{background:#fff;border-radius:20px;padding:18px 20px;box-shadow:0 14px 30px -24px rgba(27,30,52,.4)}
+.strip b{display:block;font-family:var(--disp);font-weight:500;font-size:30px;line-height:1}
+.strip b em{font-style:normal;color:var(--orange)}
+.strip span{font-size:11.5px;color:var(--ink-2);display:block;margin-top:4px}
+
+/* заявка */
+.book{display:grid;grid-template-columns:1fr;gap:18px}
+@media(min-width:920px){.book{grid-template-columns:1fr 380px}}
+.bform{background:#fff;border-radius:26px;padding:26px 28px;box-shadow:0 18px 40px -30px rgba(27,30,52,.4);display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px}
+.bform label{display:grid;gap:6px}
+.bform span{font-size:10.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
+.bform input,.bform textarea{border:1px solid var(--line);border-radius:14px;padding:12px 14px;font:inherit;font-size:14px;background:var(--paper);color:var(--ink)}
+.bform input:focus,.bform textarea:focus{outline:2px solid var(--orange);outline-offset:0;border-color:transparent}
+.bform .wide{grid-column:1/-1}
+.bform textarea{min-height:80px;resize:vertical}
+.bform textarea.sum{min-height:150px;font-family:var(--disp);font-weight:300;font-size:13px;line-height:1.55;background:#fff}
+.bform .send{grid-column:1/-1;background:var(--orange);color:#fff;border:0;border-radius:999px;padding:15px 24px;font-weight:600;font-size:14px}
+.bform .send:hover{filter:brightness(1.08)}
+.bside{background:var(--ink);color:#fff;border-radius:26px;padding:26px 28px;display:flex;flex-direction:column;gap:16px}
+.bside dl{margin:0;display:grid;gap:13px}
+.bside dt{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5)}
+.bside dd{margin:2px 0 0;font-size:14px}
+.bside .ph{font-family:var(--disp);font-weight:500;font-size:24px}
+
+footer{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 28px;margin-top:40px;font-size:11.5px;color:var(--ink-3)}
+
+/* мобильная доковая полоса с итогом */
+.dock{display:none;position:fixed;left:12px;right:12px;bottom:12px;z-index:60;background:var(--ink);color:#fff;border-radius:999px;padding:10px 10px 10px 20px;box-shadow:0 20px 50px -20px rgba(0,0,0,.7);align-items:center;gap:12px}
+.dock .dt{flex:1;min-width:0}
+.dock .dt small{display:block;font-size:9.5px;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.5)}
+.dock .dt b{font-family:var(--disp);font-weight:500;font-size:19px;color:#FF8A3D;white-space:nowrap}
+.dock a{background:var(--orange);color:#fff;border-radius:999px;padding:11px 18px;font-size:12.5px;font-weight:600;white-space:nowrap}
+@media(max-width:979px){.dock{display:flex}}
+
+/* печать: только смета */
+#print-sheet{display:none}
+@media print{
+  body>*{display:none!important}
+  #print-sheet{display:block!important;font-family:Georgia,serif;color:#000;padding:20mm}
+  #print-sheet h1{font-family:Arial,sans-serif;font-size:18pt;margin:0 0 4mm}
+  #print-sheet .m{font-size:9pt;color:#444;margin-bottom:8mm}
+  #print-sheet table{width:100%;border-collapse:collapse;font-size:11pt}
+  #print-sheet td{padding:2.4mm 0;border-bottom:.3pt solid #999;vertical-align:top}
+  #print-sheet td:last-child{text-align:right;white-space:nowrap}
+  #print-sheet .tot td{border-bottom:0;border-top:1.2pt solid #000;font-weight:bold;font-size:13pt}
+  #print-sheet .fine{font-size:8.5pt;color:#555;margin-top:8mm;line-height:1.5}
+}
+
+@media(max-width:1100px){.pill{max-width:calc(100% - 300px)}.pill .f{min-width:126px;padding:6px 14px}}
+@media(max-width:860px){
+  .pill{position:static;transform:none;margin:76px auto 0;max-width:calc(100% - 36px);z-index:5;left:auto;flex-wrap:wrap;border-radius:26px;padding:10px;gap:4px}
+  .pill .f{flex:1 1 calc(50% - 4px);min-width:0;border-right:0;border-bottom:1px solid var(--line);padding:8px 12px}
+  .pill .f:nth-of-type(3){flex-basis:calc(100% - 56px);border-bottom:0}
+  .pill .go{margin-left:auto}
+  .card{min-height:auto;padding-bottom:24px}
+  .head{position:relative;top:auto;padding:36px 22px 0}
+  .rail{display:none}
+  .float-l,.float-r{position:relative;left:auto;right:auto;bottom:auto;width:auto;margin:18px 18px 0}
+  .orb{position:relative;left:auto;bottom:auto;transform:none;justify-content:center;margin-top:18px}
+  .tab-tl .lnk{display:none}
+  .tab-tr{display:none}
+  .tab-tl{padding:12px 22px 12px 18px}
+  .quote{position:static}
+}
+</style>
+</head>
+<body>
+
+<div class="stage">
+  <div class="bg" aria-hidden="true"></div>
+
+  <div class="card">
+    <img src="img/korpus-leto.webp" alt="Главный корпус базы «Жемчужина» летом, Мичурино">
+
+    <div class="tab tab-tl">
+      <a class="lg" href="#top">
+        <svg viewBox="0 0 100 100" fill="currentColor" aria-hidden="true"><rect x="47" y="8" width="6" height="84"/><polygon points="36,14 42,16 42,84 36,86"/><polygon points="64,16 58,14 58,86 64,84"/><polygon points="25,24 31,27 31,73 25,76"/><polygon points="75,27 69,24 69,76 75,73"/><rect x="10" y="47" width="80" height="5"/><polygon points="10,36 20,49.5 10,63 17,63 27,49.5 17,36"/><polygon points="90,36 80,49.5 90,63 83,63 73,49.5 83,36"/></svg>
+        <b>Жемчужина</b>
+      </a>
+      <a class="lnk" href="#raschet" style="margin-left:18px"><i>↖</i> Расчёт</a>
+    </div>
+    <div class="tab tab-tr">
+      <a class="lnk" href="#obj">Объекты <i>↗</i></a>
+    </div>
+
+    <!-- капсула: реальные контролы -->
+    <form class="pill" id="pillForm">
+      <div class="f" data-arrow>
+        <small>Формат</small>
+        <select id="p-format" aria-label="Формат заезда">
+          <option value="sbor">Сбор команды</option>
+          <option value="korp">Корпоратив</option>
+          <option value="prazd">Праздник</option>
+          <option value="vyhod">Выходные</option>
+        </select>
+      </div>
+      <div class="f">
+        <small>Сколько вас</small>
+        <input id="p-people" type="number" min="1" max="79" value="20" aria-label="Число гостей">
+      </div>
+      <div class="f" data-arrow>
+        <small>Ночей</small>
+        <select id="p-nights" aria-label="Число ночей">
+          <option>0</option><option>1</option><option>2</option><option>3</option>
+          <option selected>7</option><option>14</option><option>21</option>
+        </select>
+      </div>
+      <button class="go" type="submit" aria-label="Собрать расчёт">→</button>
+    </form>
+
+    <nav class="rail" aria-label="Разделы">
+      <div class="grp">
+        <a href="#top" class="on" aria-label="Главная"><svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg></a>
+        <a href="#obj" aria-label="Объекты"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="8" height="8" rx="2"/><rect x="13" y="3" width="8" height="8" rx="2"/><rect x="3" y="13" width="8" height="8" rx="2"/><rect x="13" y="13" width="8" height="8" rx="2"/></svg></a>
+        <a href="#raschet" aria-label="Расчёт"><svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 10h8M8 14h4"/></svg></a>
+        <a href="#zayavka" aria-label="Заявка"><svg viewBox="0 0 24 24"><path d="M4 4h16v12H7l-3 3z"/></svg></a>
+      </div>
+      <div class="grp">
+        <a href="tel:+73452000000" aria-label="Позвонить"><svg viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></a>
+      </div>
+    </nav>
+
+    <div class="head" id="top">
+      <span class="badge"><i>✓</i> 40 км от Тюмени · Мичурино, у реки Балды</span>
+      <h1>Загородный<br><em>комплекс</em></h1>
+      <p>Спортивные сборы, корпоративные выезды и семейные выходные на одной закрытой территории у леса и воды: 79 мест, столовая, зал на 60, спортзал и баня.</p>
+    </div>
+
+    <div class="float-l">
+      <h3>Всё за одним забором</h3>
+      <p>11 500 м², семь объектов, один въезд с охраной. Между любыми двумя точками — не больше четырёх минут пешком.</p>
+      <div class="row">
+        <div class="big num">79<small>спальных мест</small></div>
+        <div class="faces" aria-hidden="true">
+          <i style="background-image:url(img/nomer.webp)"></i>
+          <i style="background-image:url(img/stolovaya.webp)"></i>
+          <i style="background-image:url(img/banya-otdyh.webp)"></i>
+        </div>
+        <a class="go" href="#obj" aria-label="К объектам">↗</a>
+      </div>
+    </div>
+
+    <div class="float-r">
+      <h3>Главный корпус<a class="go" href="#obj" aria-label="Подробнее">↗</a></h3>
+      <div class="addr">⌖ с. Мичурино, пер. Речной, 4а</div>
+      <p>Два этажа, 14 номеров и VIP-номер. Первый этаж — 21 место, второй — 22, сушилка для инвентаря внизу. Тренеров и руководителей селим отдельно.</p>
+      <div class="specs">
+        <span>▭ <b class="num">468,6</b> м²</span>
+        <span>⌂ <b>47</b> мест</span>
+        <span>◫ <b>2</b> этажа</span>
+        <span>✦ VIP на 4</span>
+      </div>
+    </div>
+
+    <div class="orb">
+      <a class="mark" href="#raschet" aria-label="К расчёту">
+        <svg viewBox="0 0 100 100" fill="currentColor" aria-hidden="true"><rect x="47" y="8" width="6" height="84"/><polygon points="36,14 42,16 42,84 36,86"/><polygon points="64,16 58,14 58,86 64,84"/><polygon points="25,24 31,27 31,73 25,76"/><polygon points="75,27 69,24 69,76 75,73"/><rect x="10" y="47" width="80" height="5"/><polygon points="10,36 20,49.5 10,63 17,63 27,49.5 17,36"/><polygon points="90,36 80,49.5 90,63 83,63 73,49.5 83,36"/></svg>
+      </a>
+      <div class="soc">
+        <a href="#obj"><svg viewBox="0 0 24 24"><path d="M20 8.5c0 5-8 11-8 11S4 13.5 4 8.5a4 4 0 0 1 7-2.6A4 4 0 0 1 20 8.5z"/></svg>7 объектов</a>
+        <a href="#raschet"><svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 10h8M8 14h4"/></svg>Расчёт</a>
+        <a href="#zayavka"><svg viewBox="0 0 24 24"><path d="M4 12v7a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-7M16 6l-4-4-4 4M12 2v13"/></svg>Заявка</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="page">
+  <div class="wrap">
+
+    <!-- ОБЪЕКТЫ -->
+    <section class="sec" id="obj">
+      <div class="sec-h">
+        <div>
+          <h2>Что на территории</h2>
+          <p>Семь объектов с реальными площадями и ценами. Кнопкой «+» объект добавляется в расчёт — смета справа пересчитается.</p>
+        </div>
+        <a href="#raschet">К расчёту <i>→</i></a>
+      </div>
+      <div class="tiles">
+        <article class="tile">
+          <img src="img/korpus-leto.webp" alt="Главный корпус">
+          <div class="t"><div><h3>Проживание</h3><small>Корпус 468,6 м² + два дома · 79 мест</small></div><button class="add" data-add="lodging" aria-pressed="false" aria-label="Добавить проживание в расчёт">+</button></div>
+          <div class="pr"><b class="num">1 600 ₽</b><span>место в сутки</span></div>
+        </article>
+        <article class="tile">
+          <img src="img/stolovaya.webp" alt="Столовая">
+          <div class="t"><div><h3>Питание</h3><small>Столовая 461,5 м² · команда в один заход</small></div><button class="add" data-add="meals" aria-pressed="false" aria-label="Добавить питание в расчёт">+</button></div>
+          <div class="pr"><b class="num">1 400 ₽</b><span>полный пансион в сутки</span></div>
+        </article>
+        <article class="tile">
+          <img src="img/bankett-zal.webp" alt="Зал на 60 человек">
+          <div class="t"><div><h3>Зал на 60</h3><small>Второй уровень столовой · сессии и банкеты</small></div><button class="add" data-add="hall" aria-pressed="false" aria-label="Добавить зал в расчёт">+</button></div>
+          <div class="pr"><b class="num">20 000 ₽</b><span>6 часов + 5 000 уборка</span></div>
+        </article>
+        <article class="tile">
+          <img src="img/ploshadka.webp" alt="Спортивная площадка">
+          <div class="t"><div><h3>Спорт</h3><small>Зал 303,7 м² и площадка с покрытием</small></div><button class="add" data-add="sport" aria-pressed="false" aria-label="Добавить спорт в расчёт">+</button></div>
+          <div class="pr"><b class="num">200 ₽</b><span>чел/день · площадка 500 ₽/час</span></div>
+        </article>
+        <article class="tile">
+          <img src="img/banya-snaruzhi.webp" alt="Баня">
+          <div class="t"><div><h3>Баня</h3><small>29 м² · парная, моечная, комната отдыха</small></div><button class="add" data-add="banya" aria-pressed="false" aria-label="Добавить баню в расчёт">+</button></div>
+          <div class="pr"><b class="num">1 500 ₽</b><span class="ok">4 часа, пятый в подарок</span></div>
+        </article>
+        <article class="tile">
+          <img src="img/dom-1.webp" alt="Дом на 16 мест">
+          <div class="t"><div><h3>Дом целиком</h3><small>172,8 м² · 16 мест · два этажа</small></div><button class="add" data-add="house" aria-pressed="false" aria-label="Добавить дом в расчёт">+</button></div>
+          <div class="pr"><b class="num">10 000 ₽</b><span>будни · вых. 15 000 · празд. 30 000</span></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- СБОРЫ / ОТДЫХ -->
+    <section class="sec">
+      <div class="split">
+        <div class="darkb">
+          <div>
+            <h2>Сбор под ключ: зал, стол, баня и ноль переездов</h2>
+            <p>Блоки от семи дней, зал закреплён за одной командой, меню под нагрузку согласуем с тренером. Команде от недели — минус 10 % на проживание и питание. Договор, счёт, акты; 44-ФЗ и 223-ФЗ.</p>
+          </div>
+          <a class="btn" href="#raschet" data-preset="sbor">Рассчитать сбор <i>→</i></a>
+        </div>
+        <div class="photo">
+          <img src="img/besedka.webp" alt="Беседка на территории">
+          <div class="cap"><b>Выходные и праздники</b><span>Дом целиком, баня на вечер, зал на 60 под торжество. Гости остаются ночевать. <a href="#raschet" data-preset="prazd" style="color:var(--orange);font-weight:600">Рассчитать →</a></span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- КОНСТРУКТОР -->
+    <section class="sec" id="raschet">
+      <div class="sec-h">
+        <div>
+          <h2>Соберите свой заезд</h2>
+          <p>Отмечайте нужное — смета считается сразу, по действующему прайсу. Расчёт предварительный: заявка не является бронированием, дату подтверждаем письменно.</p>
+        </div>
+      </div>
+
+      <div class="builder">
+        <div class="opts">
+
+          <div class="panel">
+            <div class="cap">Формат заезда</div>
+            <div class="fmt" role="group" aria-label="Формат">
+              <button type="button" data-fmt="sbor" aria-pressed="true"><b>Сбор команды</b><span>зал, стол, баня, от 7 дней</span></button>
+              <button type="button" data-fmt="korp" aria-pressed="false"><b>Корпоратив</b><span>сессия + ужин, вт–чт</span></button>
+              <button type="button" data-fmt="prazd" aria-pressed="false"><b>Праздник</b><span>зал на 60 + ночёвка</span></button>
+              <button type="button" data-fmt="vyhod" aria-pressed="false"><b>Выходные</b><span>дом целиком + баня</span></button>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="cap">Сколько вас и на сколько</div>
+            <div class="duo-ctl">
+              <div class="stepper">
+                <button type="button" data-st="people" data-d="-1" aria-label="Меньше людей">−</button>
+                <output id="o-people"><span class="num">20</span><small>человек</small></output>
+                <button type="button" data-st="people" data-d="1" aria-label="Больше людей">+</button>
+              </div>
+              <div class="stepper">
+                <button type="button" data-st="nights" data-d="-1" aria-label="Меньше ночей">−</button>
+                <output id="o-nights"><span class="num">7</span><small>ночей</small></output>
+                <button type="button" data-st="nights" data-d="1" aria-label="Больше ночей">+</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="cap">Что входит</div>
+            <div class="optlist">
+
+              <div class="opt" data-opt="lodging">
+                <button class="sw" role="switch" aria-checked="false" data-tgl="lodging" aria-label="Проживание"></button>
+                <b>Проживание</b>
+                <div class="prc num">1 600 ₽<small>чел / сутки</small></div>
+                <div class="hint">Корпус на 47 мест и два дома по 16. Комнаты по 2–6 человек, тренерские отдельно.</div>
+              </div>
+
+              <div class="opt" data-opt="meals">
+                <button class="sw" role="switch" aria-checked="false" data-tgl="meals" aria-label="Питание"></button>
+                <b>Питание, полный пансион</b>
+                <div class="prc num">1 400 ₽<small>чел / сутки</small></div>
+                <div class="hint">Три приёма, смены под тренировки, ланч-боксы на выезд. Банкетное меню считается отдельно.</div>
+              </div>
+
+              <div class="opt" data-opt="hall">
+                <button class="sw" role="switch" aria-checked="false" data-tgl="hall" aria-label="Зал на 60"></button>
+                <b>Зал на 60 человек</b>
+                <div class="prc num">20 000 ₽<small>6 часов + 5 000 уборка</small></div>
+                <div class="hint">Второй уровень столовой: сессия, банкет, награждение. Перестановка — час.</div>
+                <div class="sub-ctl">
+                  <span class="mini-lbl">Дней с залом</span>
+                  <span class="mini"><button type="button" data-st="hallDays" data-d="-1" aria-label="Меньше">−</button><output id="o-hallDays" class="num">1</output><button type="button" data-st="hallDays" data-d="1" aria-label="Больше">+</button></span>
+                </div>
+              </div>
+
+              <div class="opt" data-opt="sport">
+                <button class="sw" role="switch" aria-checked="false" data-tgl="sport" aria-label="Спортзал и площадка"></button>
+                <b>Спортзал и площадка</b>
+                <div class="prc num">200 ₽<small>чел / день</small></div>
+                <div class="hint">Зал 303,7 м² по 200 ₽ с человека за день, открытая площадка — 500 ₽ в час.</div>
+                <div class="sub-ctl">
+                  <span class="mini-lbl">Часов площадки за заезд</span>
+                  <span class="mini"><button type="button" data-st="courtHours" data-d="-1" aria-label="Меньше">−</button><output id="o-courtHours" class="num">2</output><button type="button" data-st="courtHours" data-d="1" aria-label="Больше">+</button></span>
+                </div>
+              </div>
+
+              <div class="opt" data-opt="banya">
+                <button class="sw" role="switch" aria-checked="false" data-tgl="banya" aria-label="Баня"></button>
+                <b>Баня</b>
+                <div class="prc num">6 000 ₽<small>сеанс 4 часа</small></div>
+                <div class="hint">До 8 человек за сеанс, веники и простыни включены. Пятый час не тарифицируется.</div>
+                <div class="sub-ctl">
+                  <span class="mini-lbl">Сеансов</span>
+                  <span class="mini"><button type="button" data-st="banyaN" data-d="-1" aria-label="Меньше">−</button><output id="o-banyaN" class="num">1</output><button type="button" data-st="banyaN" data-d="1" aria-label="Больше">+</button></span>
+                </div>
+              </div>
+
+              <div class="opt" data-opt="house">
+                <button class="sw" role="switch" aria-checked="false" data-tgl="house" aria-label="Дом целиком"></button>
+                <b>Дом целиком, 16 мест</b>
+                <div class="prc num" id="housePrc">15 000 ₽<small>за дом в сутки</small></div>
+                <div class="hint">Два этажа, кухня-гостиная, терраса. В будни дом обычно продаётся местами — выкуп целиком по согласованию.</div>
+                <div class="sub-ctl">
+                  <span class="mini-lbl">Дни</span>
+                  <span class="seg3" role="group" aria-label="Тип дней">
+                    <button type="button" data-ht="budni" aria-pressed="false">Будни</button>
+                    <button type="button" data-ht="vyh" aria-pressed="true">Выходные</button>
+                    <button type="button" data-ht="prazd" aria-pressed="false">Праздники</button>
+                  </span>
+                </div>
+              </div>
+
+              <div class="opt" data-opt="vip">
+                <button class="sw" role="switch" aria-checked="false" data-tgl="vip" aria-label="VIP-номер"></button>
+                <b>VIP-номер на 4 места</b>
+                <div class="prc">по запросу<small>второй этаж корпуса</small></div>
+                <div class="hint">Под руководителя, главного тренера или молодожёнов. Цену назовёт менеджер — в итог не входит.</div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- СМЕТА -->
+        <aside class="quote" id="quote">
+          <h3>Ваша смета <span id="q-badge">сбор · 7 ночей</span></h3>
+          <ul class="qlines" id="q-lines"></ul>
+          <div class="qtotal"><span>Итого</span><b class="num" id="q-total">0 ₽</b></div>
+          <div class="qpp" id="q-pp"></div>
+          <div class="qbtns">
+            <a class="main" href="#zayavka">Заявиться на бронь</a>
+            <div class="row2">
+              <button class="ghost" type="button" id="q-copy">Скопировать</button>
+              <button class="ghost" type="button" id="q-print">Распечатать</button>
+            </div>
+          </div>
+          <p class="qnote">Расчёт предварительный, по прайсу на дату публикации. Не оферта. Скидка команде от недели применяется автоматически.</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ЦИФРЫ -->
+    <section class="sec">
+      <div class="sec-h"><div><h2>Цифры территории</h2><p>Без округлений в большую сторону — как в документах.</p></div></div>
+      <div class="strip">
+        <div><b class="num">11 500 <em>м²</em></b><span>участок, огорожен с трёх сторон</span></div>
+        <div><b class="num">79</b><span>спальных мест · цель развития 107</span></div>
+        <div><b class="num">4 <em>мин</em></b><span>между любыми двумя объектами</span></div>
+        <div><b class="num">40 <em>км</em></b><span>от Тюмени по асфальту</span></div>
+        <div><b>24/7</b><span>охрана, единый въезд, видеонаблюдение</span></div>
+      </div>
+    </section>
+
+    <!-- ЗАЯВКА -->
+    <section class="sec" id="zayavka">
+      <div class="sec-h">
+        <div>
+          <h2>Заявка на бронь</h2>
+          <p>Смета уже вложена в заявку. В течение часа в рабочее время перезвоним, уточним даты и пришлём подтверждение. Заявка — не бронирование: дату держим после письменного подтверждения обеих сторон.</p>
+        </div>
+      </div>
+      <div class="book">
+        <form class="bform" id="bookForm">
+          <label><span>Как вас зовут</span><input type="text" name="name" placeholder="Имя и фамилия" autocomplete="name" required></label>
+          <label><span>Организация, если есть</span><input type="text" name="org" placeholder="СШОР, компания — или пусто" autocomplete="organization"></label>
+          <label><span>Телефон</span><input type="tel" name="tel" placeholder="+7" autocomplete="tel" required></label>
+          <label><span>Желаемые даты</span><input type="text" name="dates" placeholder="например, 12–25 января"></label>
+          <label class="wide"><span>Комментарий</span><textarea name="msg" placeholder="Вид спорта, повод, особые пожелания по питанию и залу"></textarea></label>
+          <label class="wide"><span>Ваша смета (можно поправить руками)</span><textarea class="sum" name="estimate" id="b-estimate"></textarea></label>
+          <button class="send" type="submit">Отправить заявку на бронь</button>
+        </form>
+        <aside class="bside">
+          <dl>
+            <dt>Отдел бронирования</dt><dd class="ph num">+7 3452 00-00-00</dd>
+            <dd>пн–пт 9:00–19:00, заявки с сайта — круглосуточно</dd>
+            <dt>Ответ на заявку</dt><dd>1 час в рабочее время</dd>
+            <dt>Оплата</dt><dd>Организациям — договор, счёт, акты, безналичный расчёт, 44-ФЗ и 223-ФЗ. Частным гостям — по подтверждению менеджера.</dd>
+            <dt>Скидка</dt><dd>Команде на блок от 7 ночей — −10 % на проживание и питание. Уже в калькуляторе.</dd>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <footer>
+      <span>Многофункциональный комплекс «Жемчужина» · Тюменский район, с. Мичурино, пер. Речной</span>
+      <span>Цены по действующему прайсу, фиксируются в договоре · Строящийся рядом курорт к базе отношения не имеет</span>
+    </footer>
+  </div>
+</div>
+
+<!-- мобильный док с итогом -->
+<div class="dock" id="dock" aria-hidden="true">
+  <div class="dt"><small>Итого по смете</small><b class="num" id="dock-total">0 ₽</b></div>
+  <a href="#zayavka">Заявиться</a>
+</div>
+
+<!-- печатная форма -->
+<div id="print-sheet" aria-hidden="true"></div>
+
+<script>
+(function(){
+  var RUB = function(v){ return v.toLocaleString('ru-RU') + ' ₽'; };
+  var HOUSE_RATE = {budni:10000, vyh:15000, prazd:30000};
+  var HOUSE_LBL = {budni:'будни', vyh:'выходные', prazd:'праздники'};
+  var FMT_LBL = {sbor:'сбор', korp:'корпоратив', prazd:'праздник', vyhod:'выходные'};
+
+  var st = {
+    format:'sbor', people:20, nights:7,
+    lodging:true, meals:true, sport:true, banya:true, hall:false, house:false, vip:false,
+    hallDays:1, courtHours:2, banyaN:1, houseType:'vyh'
+  };
+
+  var PRESETS = {
+    sbor:  {people:20, nights:7,  lodging:true,  meals:true,  sport:true,  banya:true,  hall:false, house:false, vip:false, banyaN:1, courtHours:2, hallDays:1},
+    korp:  {people:40, nights:1,  lodging:true,  meals:true,  sport:false, banya:true,  hall:true,  house:false, vip:true,  banyaN:2, courtHours:3, hallDays:1},
+    prazd: {people:40, nights:1,  lodging:true,  meals:false, sport:false, banya:true,  hall:true,  house:false, vip:false, banyaN:1, courtHours:0, hallDays:1},
+    vyhod: {people:8,  nights:2,  lodging:false, meals:false, sport:false, banya:true,  hall:false, house:true,  vip:false, banyaN:1, courtHours:0, hallDays:1, houseType:'vyh'}
+  };
+
+  function applyPreset(f){
+    st.format = f;
+    var p = PRESETS[f];
+    for (var k in p) st[k] = p[k];
+  }
+
+  function clamp(v,a,b){ return Math.min(b, Math.max(a, v)); }
+
+  /* ------- расчёт ------- */
+  function calc(){
+    var lines = [], notes = [], total = 0, days = Math.max(st.nights, 1);
+    function add(t, s, v){ lines.push({t:t, s:s, v:v}); total += v; }
+
+    if (st.lodging){
+      if (st.nights > 0) add('Проживание', st.people + ' чел × 1 600 ₽ × ' + st.nights + ' сут', st.people*1600*st.nights);
+      else notes.push('Проживание не посчитано: добавьте хотя бы одну ночь.');
+    }
+    if (st.meals){
+      if (st.nights > 0) add('Питание, полный пансион', st.people + ' чел × 1 400 ₽ × ' + st.nights + ' сут', st.people*1400*st.nights);
+      else notes.push('Пансион считается посуточно — для дневного события меню считает менеджер.');
+    }
+    if (st.hall){
+      add('Зал на 60', '20 000 ₽ × ' + st.hallDays + ' дн + уборка 5 000 ₽ × ' + st.hallDays, 25000*st.hallDays);
+    }
+    if (st.sport){
+      add('Спортзал', st.people + ' чел × 200 ₽ × ' + days + ' дн', st.people*200*days);
+      if (st.courtHours > 0) add('Площадка', '500 ₽ × ' + st.courtHours + ' ч', 500*st.courtHours);
+    }
+    if (st.banya && st.banyaN > 0){
+      add('Баня', st.banyaN + ' сеанс' + (st.banyaN>1?'а':'') + ' × 4 часа × 1 500 ₽ — пятый час в подарок', 6000*st.banyaN);
+    }
+    if (st.house){
+      var hn = Math.max(st.nights, 1);
+      add('Дом целиком, 16 мест', HOUSE_RATE[st.houseType].toLocaleString('ru-RU') + ' ₽ (' + HOUSE_LBL[st.houseType] + ') × ' + hn + ' сут', HOUSE_RATE[st.houseType]*hn);
+      if (st.houseType === 'budni') notes.push('В будни дом целиком — по согласованию: обычно в будни места продаются по 1 600 ₽.');
+    }
+    var disc = 0;
+    if (st.format === 'sbor' && st.nights >= 7 && (st.lodging || st.meals)){
+      var base = (st.lodging ? st.people*1600*st.nights : 0) + (st.meals ? st.people*1400*st.nights : 0);
+      disc = Math.round(base * 0.10);
+      if (disc > 0){ lines.push({t:'Скидка команде от недели', s:'−10 % на проживание и питание', v:-disc, disc:true}); total -= disc; }
+    }
+    if (st.vip) notes.push('VIP-номер на 4 места — цена по запросу, в итог не входит.');
+    if (st.format === 'prazd') notes.push('Банкетное меню — по числу гостей, считает менеджер отдельно от пансиона.');
+
+    return {lines:lines, notes:notes, total:total};
+  }
+
+  function estimateText(r){
+    var out = ['СМЕТА — база «Жемчужина», Мичурино', 'Формат: ' + FMT_LBL[st.format] + ' · ' + st.people + ' чел · ' + st.nights + ' ноч.', ''];
+    r.lines.forEach(function(l){ out.push((l.v<0?'− ':'') + l.t + ' — ' + RUB(Math.abs(l.v)) + '  (' + l.s + ')'); });
+    out.push('', 'ИТОГО: ' + RUB(r.total));
+    if (st.people > 0) out.push('На человека: ' + RUB(Math.round(r.total/st.people)));
+    r.notes.forEach(function(n){ out.push('· ' + n); });
+    out.push('', 'Расчёт предварительный, не оферта. Заявка не является бронированием.');
+    return out.join('\n');
+  }
+
+  /* ------- отрисовка ------- */
+  function syncUI(){
+    document.getElementById('p-format').value = st.format;
+    document.getElementById('p-people').value = st.people;
+    var ns = document.getElementById('p-nights');
+    var have = [].some.call(ns.options, function(o){ return +o.value === st.nights || o.text == st.nights; });
+    if (!have){ var o = document.createElement('option'); o.text = st.nights; ns.add(o); }
+    ns.value = st.nights;
+
+    document.querySelectorAll('.fmt button').forEach(function(b){ b.setAttribute('aria-pressed', b.dataset.fmt === st.format ? 'true' : 'false'); });
+    document.querySelector('#o-people span').textContent = st.people;
+    document.querySelector('#o-nights span').textContent = st.nights;
+    document.getElementById('o-hallDays').textContent = st.hallDays;
+    document.getElementById('o-courtHours').textContent = st.courtHours;
+    document.getElementById('o-banyaN').textContent = st.banyaN;
+
+    ['lodging','meals','hall','sport','banya','house','vip'].forEach(function(k){
+      var card = document.querySelector('.opt[data-opt="' + k + '"]');
+      var sw = card.querySelector('.sw');
+      sw.setAttribute('aria-checked', st[k] ? 'true' : 'false');
+      card.classList.toggle('on', !!st[k]);
+    });
+    document.querySelectorAll('.seg3 button').forEach(function(b){ b.setAttribute('aria-pressed', b.dataset.ht === st.houseType ? 'true' : 'false'); });
+    document.getElementById('housePrc').innerHTML = HOUSE_RATE[st.houseType].toLocaleString('ru-RU') + ' ₽<small>за дом в сутки</small>';
+
+    document.querySelectorAll('.tile .add').forEach(function(b){
+      var k = b.dataset.add;
+      var on = !!st[k];
+      b.setAttribute('aria-pressed', on ? 'true' : 'false');
+      b.textContent = on ? '✓' : '+';
+    });
+  }
+
+  function render(){
+    var r = calc();
+    var ul = document.getElementById('q-lines');
+    var html = '';
+    if (!r.lines.length) html = '<li class="note">Ничего не выбрано — включите позиции слева или кнопками «+» на карточках объектов.</li>';
+    r.lines.forEach(function(l){
+      html += '<li' + (l.disc ? ' class="disc"' : '') + '><span>' + l.t + '<small>' + l.s + '</small></span><b>' + (l.v<0?'−':'') + RUB(Math.abs(l.v)) + '</b></li>';
+    });
+    r.notes.forEach(function(n){ html += '<li class="note">· ' + n + '</li>'; });
+    ul.innerHTML = html;
+
+    document.getElementById('q-total').textContent = RUB(r.total);
+    document.getElementById('q-pp').textContent = st.people > 0 && r.total > 0 ? RUB(Math.round(r.total/st.people)) + ' на человека за заезд' : '';
+    document.getElementById('q-badge').textContent = FMT_LBL[st.format] + ' · ' + st.people + ' чел · ' + st.nights + ' ноч.';
+    document.getElementById('dock-total').textContent = RUB(r.total);
+    document.getElementById('b-estimate').value = estimateText(r);
+  }
+
+  function refresh(){ syncUI(); render(); }
+
+  /* ------- обработчики ------- */
+  document.getElementById('pillForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    document.getElementById('raschet').scrollIntoView({behavior:'smooth'});
+  });
+  document.getElementById('p-format').addEventListener('change', function(){ applyPreset(this.value); refresh(); });
+  document.getElementById('p-people').addEventListener('change', function(){ st.people = clamp(parseInt(this.value,10)||1, 1, 79); refresh(); });
+  document.getElementById('p-nights').addEventListener('change', function(){ st.nights = clamp(parseInt(this.value,10)||0, 0, 30); refresh(); });
+
+  document.querySelectorAll('.fmt button').forEach(function(b){
+    b.addEventListener('click', function(){ applyPreset(b.dataset.fmt); refresh(); });
+  });
+  document.querySelectorAll('[data-preset]').forEach(function(a){
+    a.addEventListener('click', function(){ applyPreset(a.dataset.preset); refresh(); });
+  });
+
+  document.querySelectorAll('[data-st]').forEach(function(b){
+    b.addEventListener('click', function(){
+      var k = b.dataset.st, d = +b.dataset.d;
+      if (k === 'people') st.people = clamp(st.people + d, 1, 79);
+      if (k === 'nights') st.nights = clamp(st.nights + d, 0, 30);
+      if (k === 'hallDays') st.hallDays = clamp(st.hallDays + d, 1, 14);
+      if (k === 'courtHours') st.courtHours = clamp(st.courtHours + d, 0, 12);
+      if (k === 'banyaN') st.banyaN = clamp(st.banyaN + d, 1, 6);
+      refresh();
+    });
+  });
+
+  document.querySelectorAll('[data-tgl]').forEach(function(sw){
+    sw.addEventListener('click', function(){ var k = sw.dataset.tgl; st[k] = !st[k]; refresh(); });
+  });
+  document.querySelectorAll('.seg3 button').forEach(function(b){
+    b.addEventListener('click', function(){ st.houseType = b.dataset.ht; st.house = true; refresh(); });
+  });
+  document.querySelectorAll('.tile .add').forEach(function(b){
+    b.addEventListener('click', function(){
+      var k = b.dataset.add;
+      st[k] = !st[k];
+      if (k === 'banya' && st.banya && st.banyaN < 1) st.banyaN = 1;
+      refresh();
+    });
+  });
+
+  document.getElementById('q-copy').addEventListener('click', function(){
+    var txt = document.getElementById('b-estimate').value;
+    function done(){ var b = document.getElementById('q-copy'); b.textContent = 'Скопировано'; setTimeout(function(){ b.textContent = 'Скопировать'; }, 1600); }
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(txt).then(done, done);
+    else { var ta = document.getElementById('b-estimate'); ta.focus(); ta.select(); try{ document.execCommand('copy'); }catch(e){} done(); }
+  });
+
+  document.getElementById('q-print').addEventListener('click', function(){
+    var r = calc();
+    var rows = '';
+    r.lines.forEach(function(l){ rows += '<tr><td>' + l.t + '<br><span style="font-size:9pt;color:#555">' + l.s + '</span></td><td>' + (l.v<0?'−':'') + RUB(Math.abs(l.v)) + '</td></tr>'; });
+    rows += '<tr class="tot"><td>ИТОГО</td><td>' + RUB(r.total) + '</td></tr>';
+    var notes = r.notes.map(function(n){ return '· ' + n; }).join('<br>');
+    document.getElementById('print-sheet').innerHTML =
+      '<h1>Смета — база «Жемчужина»</h1>' +
+      '<div class="m">Тюменский район, с. Мичурино, пер. Речной · ' + FMT_LBL[st.format] + ' · ' + st.people + ' чел · ' + st.nights + ' ноч. · сформировано ' + new Date().toLocaleDateString('ru-RU') + '</div>' +
+      '<table>' + rows + '</table>' +
+      '<div class="fine">' + (notes ? notes + '<br><br>' : '') + 'Расчёт предварительный, по прайсу на дату публикации, не является офертой. Заявка не является бронированием: дата считается подтверждённой после письменного подтверждения обеих сторон. Отдел бронирования: +7 3452 00-00-00.</div>';
+    window.print();
+  });
+
+  document.getElementById('bookForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var btn = this.querySelector('.send');
+    btn.textContent = 'Заявка отправлена — перезвоним в течение часа';
+    btn.style.background = '#2E7D52';
+    btn.disabled = true;
+  });
+
+  refresh();
+})();
+</script>
+</body>
+</html>
